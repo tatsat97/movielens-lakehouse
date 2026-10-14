@@ -1,0 +1,9 @@
+snapshots:
+  - name: snap_tags
+    relation: ref('stg_tags_keyed')
+    config:
+      schema: snapshots
+      unique_key: user_movie_tag_id
+      strategy: timestamp
+      updated_at: tag_timestamp
+      hard_deletes: invalidate

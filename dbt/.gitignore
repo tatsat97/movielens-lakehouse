@@ -1,0 +1,23 @@
+
+target/
+dbt_packages/
+logs/
+.env
+
+.venv/
+__pycache__/
+.DS_Store
+.databricks/
+.env
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+logs/
+
+# terraform (for Phase 2)
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars

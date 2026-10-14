@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: fct_ratings
+    columns:
+      - name: movie_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_movies')
+                field: movie_id
+      - name: user_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_users')
+                field: user_id
+      - name: rating
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
+                quote: false

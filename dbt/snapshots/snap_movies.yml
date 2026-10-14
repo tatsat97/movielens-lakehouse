@@ -1,0 +1,8 @@
+snapshots:
+  - name: snap_movies
+    relation: ref('stg_movies')
+    config:
+      schema: snapshots
+      unique_key: movie_id
+      strategy: check
+      check_cols: [title, genres]
