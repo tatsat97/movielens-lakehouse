@@ -12,4 +12,4 @@ select user_id
 from ratings_users
 union
 select user_id
-from tags_users
+from tags_users-- ci test
