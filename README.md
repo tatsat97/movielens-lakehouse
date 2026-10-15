@@ -4,7 +4,7 @@ An analytics engineering project on **Databricks (Unity Catalog)** using **dbt**
 
 It runs on **Databricks Free Edition**. The data is a public dataset, and this is a personal learning project, not production.
 
-> **Status:** dbt layer and CI are done. Terraform, Airflow and a data quality layer are on the [roadmap](#roadmap).
+> **Status:** dbt layer and CI are done. Airflow and a data quality layer are on the [roadmap](#roadmap).
 
 ## Architecture
 
@@ -96,7 +96,6 @@ Each pull request builds into its own schema, so CI never touches `dev` or `prod
 
 - [x] dbt models, snapshots, seeds, tests, macros
 - [x] Git repository and CI on pull requests
-- [ ] Terraform for catalog, schemas, volume and grants
 - [ ] Airflow (local) orchestrating ingestion, `dbt build` and snapshots
 - [ ] Data quality: source freshness, extra dbt tests, anomaly detection, a results dashboard
 - [ ] Slim CI (build only changed models) and automatic cleanup of CI schemas
@@ -107,7 +106,6 @@ Each pull request builds into its own schema, so CI never touches `dev` or `prod
 .
 ├── dbt/              dbt project (models, snapshots, seeds, macros, tests, analyses)
 │   └── ci/           profiles used by CI (environment variables only, no secrets)
-├── terraform/        planned
 ├── airflow/          planned
 ├── .github/workflows/dbt-ci.yml
 └── requirements.txt
