@@ -69,7 +69,9 @@ def movielens_pipeline():
               SELECT CAST(userId AS INT) AS userId,
                      CAST(movieId AS INT) AS movieId,
                      CAST(rating AS DOUBLE) AS rating,
-                     CAST(timestamp AS BIGINT) AS timestamp
+                     CAST(timestamp AS BIGINT) AS timestamp,
+                     current_timestamp() AS _loaded_at,
+                     _metadata.file_name AS _source_file
               FROM '{VOLUME_DIR}/'
             )
             FILEFORMAT = CSV

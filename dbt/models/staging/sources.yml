@@ -7,6 +7,11 @@ sources:
     tables:
       - name: raw_movies
       - name: raw_ratings
+        config: 
+          loaded_at_field: _loaded_at
+          freshness: 
+            warn_after: {count: 1, period: day}
+            error_after: {count: 2, period: day}
       - name: raw_tags
       - name: raw_links
       - name: raw_genome_tags

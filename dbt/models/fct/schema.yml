@@ -2,7 +2,23 @@ version: 2
 
 models:
   - name: fct_ratings
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [user_id, movie_id]
+      - dbt_utils.equal_rowcount:
+          arguments:
+            compare_model: ref('stg_ratings')
+          config:
+            severity: warn
     columns:
+      - name: rating
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0.5
+                max_value: 5
+
       - name: movie_id
         data_tests:
           - not_null
