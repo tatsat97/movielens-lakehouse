@@ -1,0 +1,13 @@
+services:
+  scheduler:
+    volumes:
+      - ../dbt:/usr/local/airflow/dbt
+  dag-processor:
+    volumes:
+      - ../dbt:/usr/local/airflow/dbt
+  triggerer:
+    volumes:
+      - ../dbt:/usr/local/airflow/dbt
+  api-server:
+    volumes:
+      - ../dbt:/usr/local/airflow/dbt

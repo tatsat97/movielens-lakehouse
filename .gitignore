@@ -21,3 +21,9 @@ logs/
 .vscode/
 *.code-workspace
 dbt/ci/.user.yml
+
+#airflow
+airflow/.env
+airflow/airflow_settings.yaml
+# large local data
+airflow/include/data/

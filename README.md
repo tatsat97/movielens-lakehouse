@@ -96,7 +96,7 @@ Each pull request builds into its own schema, so CI never touches `dev` or `prod
 
 - [x] dbt models, snapshots, seeds, tests, macros
 - [x] Git repository and CI on pull requests
-- [ ] Airflow (local) orchestrating ingestion, `dbt build` and snapshots
+- [x] Airflow (local) orchestrating ingestion, `dbt build` and snapshots
 - [ ] Data quality: source freshness, extra dbt tests, anomaly detection, a results dashboard
 - [ ] Slim CI (build only changed models) and automatic cleanup of CI schemas
 
